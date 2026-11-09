@@ -1,0 +1,351 @@
+{
+  "summary": {
+    "num_queues": 3,
+    "num_gatherings": 3,
+    "num_crosswalks": 0,
+    "num_cohesive": 8,
+    "total_groups": 14
+  },
+  "groups": [
+    {
+      "group_id": 0,
+      "group_type": "queue",
+      "topology": "directed_chain",
+      "member_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "head_agent_id": 0,
+        "tail_agent_id": 4,
+        "queue_direction": [
+          -0.00754507827839315,
+          0.9999705354642807
+        ]
+      }
+    },
+    {
+      "group_id": 1,
+      "group_type": "queue",
+      "topology": "directed_chain",
+      "member_ids": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "head_agent_id": 5,
+        "tail_agent_id": 8,
+        "queue_direction": [
+          0.9358113824666563,
+          -0.3524983070155014
+        ]
+      }
+    },
+    {
+      "group_id": 2,
+      "group_type": "queue",
+      "topology": "directed_chain",
+      "member_ids": [
+        10,
+        11,
+        12
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "head_agent_id": 10,
+        "tail_agent_id": 12,
+        "queue_direction": [
+          -0.9999999999999811,
+          -1.9470718370939353e-07
+        ]
+      }
+    },
+    {
+      "group_id": 3,
+      "group_type": "gathering",
+      "topology": "ring",
+      "member_ids": [
+        13,
+        14,
+        15
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "center": [
+          1645,
+          1399
+        ]
+      }
+    },
+    {
+      "group_id": 4,
+      "group_type": "gathering",
+      "topology": "ring",
+      "member_ids": [
+        16,
+        17,
+        18
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "center": [
+          1085,
+          820
+        ]
+      }
+    },
+    {
+      "group_id": 5,
+      "group_type": "gathering",
+      "topology": "ring",
+      "member_ids": [
+        19,
+        20,
+        21
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "trigger": null,
+      "metadata": {
+        "center": [
+          1635,
+          1865
+        ]
+      }
+    },
+    {
+      "group_id": 6,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        22,
+        26
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 7,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        23,
+        25
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 8,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        28,
+        29,
+        30
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 9,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        33,
+        39
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 10,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        34,
+        35
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 11,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        37,
+        38
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 12,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        40,
+        42
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    },
+    {
+      "group_id": 13,
+      "group_type": "cohesive",
+      "topology": "clique",
+      "member_ids": [
+        49,
+        50
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "trigger": null,
+      "metadata": {}
+    }
+  ]
+}

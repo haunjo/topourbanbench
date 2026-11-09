@@ -1,0 +1,103 @@
+# CrowdES Scenario Configuration
+# Controls scenario generation and group behavior parameters
+# All spatial parameters are in METERS unless explicitly marked as pixels
+
+# Global parameters
+robot_clearance_meters: 0.5     # Robot navigation clearance radius (meters)
+road_curb_margin_meters: 0.5    # Road dilation margin for curb safety (meters)
+
+# Scenario enable/disable
+scenarios:
+  queue:
+    enabled: true
+    description: "People forming lines and waiting"
+
+  cohesive:
+    enabled: true
+    description: "Groups walking side-by-side"
+
+  gathering:
+    enabled: true
+    description: "People converging at food carts or plazas"
+
+  crosswalk:
+    enabled: false
+    description: "Groups crossing from both sides of a crosswalk (EXCLUDED FROM BENCHMARK)"
+
+# Queue (people lining up)
+queue:
+  # Map generation
+  detection_mode: "bus_stop"         # "bus_stop" only; "door"/"both" deprecated
+  line_thickness_meters: 0.6         # Queue line rendering thickness (~person width)
+  queue_length_meters: 20.0          # Queue line length — upper bound when randomizing (meters)
+  queue_length_meters_min: 10.0      # Lower bound for domain randomization (meters)
+
+  # Trajectory generation
+  spacing_meters_min: 1.0            # Min spacing between queue members (meters)
+  spacing_meters_max: 1.8            # Max spacing between queue members (meters)
+  max_queue_size: 7                  # Maximum agents per queue — upper bound when randomizing
+  max_queue_size_min: 2              # Lower bound for domain randomization
+  min_bypass_meters: 3.0             # Expert bypass distance past queue tail (meters)
+
+  # Adaptive queue length
+  safety_margin_ratio: 0.85          # Use 85% of available walkable space
+  min_length_meters: 2.0             # Minimum queue length (~2 people at min spacing)
+  max_length_meters: 14.0            # Maximum queue length cap
+  scan_gap_tolerance_meters: 0.2     # Max consecutive non-walkable gap to skip during scan (lamp posts, seg noise)
+
+# Cohesive (people walking together, e.g., a family)
+cohesive:
+  # Grouping rules (used by group_generator.py)
+  proximity_threshold: 80.0          # Spawn proximity for grouping (pixels)
+  goal_similarity_threshold: 0.5     # Cosine similarity threshold for goal direction
+  temporal_threshold: 3.0            # Spawn time window (seconds)
+  speed_variance_threshold: 15.0     # Speed compatibility threshold
+  min_group_size: 2                  # Minimum agents to form group
+  max_group_size: 3                  # Maximum group size
+
+  # Trajectory generation
+  side_by_side_spacing_meters: 1.0   # Lateral spacing between members (meters)
+  cohesion_strength: 0.9             # Centroid attraction strength (0~1)
+
+# Gathering (people meeting in a plaza)
+gathering:
+  # Map generation - 2D Convolution method (finds centers with max local walkable area)
+  search_radius_meters: 2.5          # Circular kernel radius for convolution (meters)
+  min_coverage_ratio: 0.6            # Min walkable coverage within kernel
+  max_gathering_points: 5            # Max gathering points per scene
+  min_distance_meters: 6.0           # Min distance between gathering centers (meters)
+  queue_overlap_clearance_meters: 5.0 # Min distance from gathering center to queue line (meters)
+
+  # Trajectory generation
+  min_gathering_size: 3              # Minimum agents to form group
+  max_gathering_size: 7              # Hard cap — large circles form arc/crescent naturally
+  spacing_meters_min: 1.0            # Min arc spacing between members (meters)
+  spacing_meters_max: 2.0            # Max arc spacing between members (meters)
+  spacing_meters: 1.5                # Fallback if min/max not set
+
+  # Adaptive spawn radius (calculated based on local walkable area)
+  min_radius_meters: 1.0             # Minimum gathering radius (meters)
+  max_radius_meters: 2.5             # Maximum gathering radius (meters)
+  safety_margin_ratio: 0.6           # Use 60% of available space
+
+# Semantic segmentation IDs
+semantic_ids:
+  road: 1
+  sidewalk: 2
+  roadline: 24
+  building: 3
+  overhang_ids: [0, 5, 6, 7, 8, 22]
+  vegetation: 9
+  fence: 5
+
+# Walkable connectivity
+walkable_connectivity:
+  mode: largest_only                 # "largest_only" or "all_valid"
+  min_component_area: 1000           # Minimum area for valid component (pixels)
+
+# Appearance map (spawn density)
+appearance:
+  border_thickness: 45               # Spawn region thickness at borders (pixels)
+  probability_smoothing_sigma: 15    # Gaussian blur sigma for spawn density
+  flow_direction: auto               # "auto", "horizontal", "vertical", or "complex"
+  flow_length_ratio: 1.0             # Min ratio to determine flow direction

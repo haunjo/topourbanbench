@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# CrowdES weights: download them from the official CrowdES release (see README)
+topourbanbench/generation/crowdes/checkpoints/
+*.zip
+
+# CrowdES training datasets (only needed to retrain CrowdES); extracted CARLA maps stay tracked
+topourbanbench/generation/crowdes/datasets/*
+!topourbanbench/generation/crowdes/datasets/Synthetic/
+!topourbanbench/generation/crowdes/datasets/segmentation_classes.json
+topourbanbench/generation/crowdes/datasets/Synthetic/debug_plots/
+
+# Generated scenes
+output/
+topourbanbench/generation/crowdes/output/
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store

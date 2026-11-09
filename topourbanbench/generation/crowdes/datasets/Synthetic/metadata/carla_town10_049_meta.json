@@ -1,0 +1,244 @@
+{
+    "center_x": -71.69857025146484,
+    "center_y": -46.422367095947266,
+    "center_z": 0.15239998698234558,
+    "ortho_size": 41.421,
+    "pixel_per_meter": 49.44351898795297,
+    "scenarios": {
+        "queue": [
+            {
+                "type": "queue",
+                "source": "bus",
+                "goal_point": [
+                    1472,
+                    276
+                ],
+                "direction": [
+                    -0.00754507827839315,
+                    0.9999705354642807
+                ],
+                "length_px": 661.0,
+                "requested_length_px": 1000,
+                "queue_id": "Bus_49_0",
+                "pixel_per_meter": 49.44351898795297,
+                "walkable_length_px": 396
+            },
+            {
+                "type": "queue",
+                "source": "bus",
+                "goal_point": [
+                    745,
+                    1440
+                ],
+                "direction": [
+                    0.9358113824666563,
+                    -0.3524983070155014
+                ],
+                "length_px": 517.0,
+                "requested_length_px": 1000,
+                "queue_id": "Bus_49_1",
+                "pixel_per_meter": 49.44351898795297,
+                "walkable_length_px": 310
+            },
+            {
+                "type": "queue",
+                "source": "food_cart_dynamic",
+                "goal_point": [
+                    1792,
+                    1060
+                ],
+                "direction": [
+                    -0.9999999999999811,
+                    -1.9470718370939353e-07
+                ],
+                "length_px": 183.0,
+                "requested_length_px": 1000,
+                "queue_id": "DynFC_49_0",
+                "pixel_per_meter": 49.44351898795297,
+                "walkable_length_px": 109
+            },
+            {
+                "type": "queue",
+                "source": "food_cart_dynamic",
+                "goal_point": [
+                    1792,
+                    535
+                ],
+                "direction": [
+                    -0.9999999999999811,
+                    -1.9470718370939353e-07
+                ],
+                "length_px": 1000.0,
+                "requested_length_px": 1000,
+                "queue_id": "DynFC_49_1",
+                "pixel_per_meter": 49.44351898795297,
+                "walkable_length_px": 600
+            }
+        ],
+        "gathering": [
+            {
+                "type": "gathering",
+                "source": "convolution",
+                "center": [
+                    1645,
+                    1399
+                ],
+                "pixel_per_meter": 49.44351898795297,
+                "coverage_ratio": 1.0000000000000007,
+                "spawn_radius": 75
+            },
+            {
+                "type": "gathering",
+                "source": "convolution",
+                "center": [
+                    1085,
+                    820
+                ],
+                "pixel_per_meter": 49.44351898795297,
+                "coverage_ratio": 1.0000000000000004,
+                "spawn_radius": 103
+            },
+            {
+                "type": "gathering",
+                "source": "convolution",
+                "center": [
+                    1635,
+                    1865
+                ],
+                "pixel_per_meter": 49.44351898795297,
+                "coverage_ratio": 1.0000000000000004,
+                "spawn_radius": 103
+            }
+        ],
+        "crosswalk": [
+            {
+                "type": "crosswalk",
+                "center": [
+                    321,
+                    578
+                ],
+                "point_a": [
+                    323.0000022949509,
+                    516.9999811134477
+                ],
+                "point_b": [
+                    319.94439467770536,
+                    640.3701360740523
+                ],
+                "width": 646.1981201171875,
+                "crossing_direction": [
+                    -0.024760209039765516,
+                    0.9996934190282074
+                ],
+                "pixel_per_meter": 49.44351898795297,
+                "polygon_pts": [
+                    [
+                        0,
+                        632
+                    ],
+                    [
+                        0,
+                        509
+                    ],
+                    [
+                        646,
+                        525
+                    ],
+                    [
+                        628,
+                        648
+                    ]
+                ],
+                "zone_center": [
+                    321.4721984863281,
+                    578.68505859375
+                ],
+                "zone_radius": 210.03455171483546
+            },
+            {
+                "type": "crosswalk",
+                "center": [
+                    951,
+                    134
+                ],
+                "point_a": [
+                    1012.996553249277,
+                    134.46267608440243
+                ],
+                "point_b": [
+                    889.003446750723,
+                    133.5373544331757
+                ],
+                "width": 268.9328308105469,
+                "crossing_direction": [
+                    -0.9999721553199835,
+                    -0.007462478456028079
+                ],
+                "pixel_per_meter": 49.44351898795297,
+                "polygon_pts": [
+                    [
+                        1011,
+                        242
+                    ],
+                    [
+                        888,
+                        268
+                    ],
+                    [
+                        890,
+                        0
+                    ],
+                    [
+                        1014,
+                        0
+                    ]
+                ],
+                "zone_center": [
+                    951.0,
+                    134.00001525878906
+                ],
+                "zone_radius": 210.32883653539213
+            }
+        ]
+    },
+    "static_buses": [
+        {
+            "blueprint": "vehicle.mitsubishi.fusorosa",
+            "x": -53.24171829223633,
+            "y": -36.874637603759766,
+            "z": 0.5,
+            "pitch": 0.0,
+            "yaw": 90.43230438232422,
+            "roll": 0.0
+        },
+        {
+            "blueprint": "vehicle.mitsubishi.fusorosa",
+            "x": -80.89447784423828,
+            "y": -55.35304641723633,
+            "z": 0.5,
+            "pitch": 0.0,
+            "yaw": -20.640220642089844,
+            "roll": 0.0
+        }
+    ],
+    "static_food_carts": [
+        {
+            "blueprint": "static.prop.foodcart",
+            "x": -72.43803405761719,
+            "y": -29.38078498840332,
+            "z": 0.2523999810218811,
+            "pitch": 0.0,
+            "yaw": -89.99999237060547,
+            "roll": 0.0
+        },
+        {
+            "blueprint": "static.prop.foodcart",
+            "x": -61.81930923461914,
+            "y": -29.38078498840332,
+            "z": 0.2523999810218811,
+            "pitch": 0.0,
+            "yaw": -89.99999237060547,
+            "roll": 0.0
+        }
+    ]
+}

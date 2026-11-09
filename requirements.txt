@@ -1,0 +1,24 @@
+# TopoUrbanBench: scene generation and compliance metrics (first release).
+# Versions follow CrowdES (Python 3.10, PyTorch 2.2.2, CUDA 12.1).
+torch==2.2.2
+transformers==4.44.2
+diffusers==0.30.3
+numpy<2             # PyTorch 2.2 wheels are built against NumPy 1.x
+scipy
+pandas
+scikit-learn
+scikit-image
+opencv-python
+pillow
+matplotlib
+tqdm
+joblib
+PyYAML
+pynavmesh
+pykalman
+dtaidistance
+POT
+shapely
+
+# The CARLA Python API is only needed to extract new maps (scripts/generate_carla_scenarios.sh).
+# It must match the CARLA 0.9.16 server: pip install carla==0.9.16

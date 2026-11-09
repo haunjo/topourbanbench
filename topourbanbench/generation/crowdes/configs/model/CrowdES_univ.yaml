@@ -1,0 +1,74 @@
+model_name: CrowdES
+dataset_config: ./configs/dataset/univ.yaml
+trainer_config: ./configs/trainer/CrowdES_trainer_ethucy.yaml
+
+crowd_emitter:
+  type: CrowdES
+  
+  emitter_pre:
+    input_types:
+      # - scene_img
+      - scene_seg
+    output_types:
+      - scene_appearance
+      - scene_population
+    max_population: 128
+    population_density_temperature: 0.5
+    population_probability_threshold: 0.01
+    population_multiplier: 2.0
+    image_size: [1024, 1024]
+
+  emitter:
+    input_types:
+      # - scene_img
+      - scene_seg
+      - scene_population
+      - scene_appearance
+    output_types:
+      - agent_type
+      - frame_origin
+      - agent_velocity
+      - origin_x
+      - origin_y
+      - goal_x
+      - goal_y
+    window_size: 10
+    window_stride: 0.2
+    max_num_agents_pad: 64  # larger than 42
+    vae_latent_dim: 32
+    vae_hidden_dim: 2048
+    vae_learning_rate: 0.0001
+    vae_num_train_epochs: 32
+    latent_len_multiplier: 64
+    image_size: [128, 128]
+    diffusion_steps: 50
+    leapfrog_steps: 5
+    min_origin_goal_distance: 0.5
+    unguidance_prob: 0
+    guidance_scale: 5.0
+    ddim_eta: 0.0
+
+crowd_simulator:
+  type: CrowdES
+  
+  locomotion:
+    walkable_class: ["tree", "sidewalk", "road"]
+    
+  simulator:
+    environment_types:
+      - scene_seg
+      - scene_population
+      # - scene_appearance
+    environment_size: [64, 64]
+    environment_pixel_meter: 0.25
+    simulator_fps: 5
+    history_length: 10  # 2s
+    future_length: 10  # 2s
+    window_stride: 1
+    interaction_range: 4.0  # in meter
+    interaction_max_num_agents: 4
+    control_time_offset: 2  # 2s
+    latent_dim: 8
+    hidden_dim: 2048
+    latent_temperature: 1.0
+    latent_mixup_alpha: 1.0
